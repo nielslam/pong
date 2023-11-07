@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeAreFrank! Pong</title>
+    <link rel="stylesheet" href="blockrain/blockrain.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper" style="width: 250px; height: 500px;"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="blockrain/blockrain.jquery.min.js"></script>
+    <script>
+        var $game = $('#wrapper').blockrain({
+            autoplay: false, // Let a bot play the game
+            speed: 22, // The speed of the game. The higher, the faster the pieces go.
+
+            // Copy
+            playText: 'Kom alvast in de stemming ;)',
+            playButtonText: 'Start',
+            gameOverText: 'Game Over',
+            restartButtonText: 'Opnieuw spelen',
+            scoreText: 'Score',
+
+            // Basic Callbacks
+            onStart: function(){},
+            onRestart: function(){},
+            onGameOver: function(score){},
+
+            // When a line is made. Returns the number of lines, score assigned and total score
+            onLine: function(lines, scoreIncrement, score){}
+        });
+
+        $game.blockrain('theme', {
+            background: '#1e1e1e',
+            primary: '#fdc300',
+            secondary: '#fdc300',
+            stroke: '#1e1e1e',
+            backgroundGrid: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/SURBVHgB7dWxCQAgDETRxDEsbv/eiZxEwRWEJIT/4epXnks6ltCwpICBgYGBG8N7zbdw+Dfnj4GBgYGBy8EXUWgGSRuLM8oAAAAASUVORK5CYII='
+        })
+    </script>
+</body>
+
+</html>
